@@ -1,6 +1,8 @@
-<li>
-  Name: <%= user.name %>
+<li class='d-flex justify-content-between align-items-center px-4'>
+  
   <span class="profile-link">
-    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <%= link_to user.name,  user_path(user), class: 'profile-link h4' %>
   </span>
+   <%= friendship_button(user) %> 
+
 </li>
