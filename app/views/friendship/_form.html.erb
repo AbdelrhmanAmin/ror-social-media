@@ -1,6 +1,6 @@
-<%= form_for @friendship, html: {class: 'd-flex justify-content-center'} do |form| %>
+<%= form_for @friendship, html: {class: 'd-flex justify-content-end'} do |form| %>
   <%= form.hidden_field :friend_id, value: user.id %>
   <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :confirmed, value: nil %>
-  <%= form.submit 'ADD' %>
+  <%= form.submit 'ADD', class: 'btn btn-success w-50' %>
 <% end %>

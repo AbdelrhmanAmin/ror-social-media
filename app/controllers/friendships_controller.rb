@@ -21,7 +21,6 @@ class FriendshipsController < ApplicationController
   def confirm
     friendship = Friendship.find(params[:id])
     friendship.confirmed = true
-    puts 'TESSSSSSSSSSSSSSST'
     friendship.save
     redirect_to users_path
   end
@@ -30,7 +29,7 @@ class FriendshipsController < ApplicationController
     friendship.confirmed = false
     user = User.find(friendship.user_id)
     friend = User.find(friendship.friend_id)
-    friend.friend_requests.delete_if {|u| u == user}
+    Friendship.where(user:user, friend: friend).first.delete
     friendship.save
     redirect_to users_path
   end
