@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :friendships do
     member do
       post 'accept', to: 'friendships#confirm'
+      post 'reject', to: 'friendships#reject'
     end
   end
   resources :users

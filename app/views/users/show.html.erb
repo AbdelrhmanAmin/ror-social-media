@@ -1,9 +1,13 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <div class="d-flex justify-content-between w-100 align-items-center">
+    <h2><%= @user.name %></h2>
+    <%= friendship_button(@user)%> 
+  </div>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
+      
     </ul>
   </article>
 </section>
