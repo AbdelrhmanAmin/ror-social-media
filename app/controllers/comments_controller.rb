@@ -10,12 +10,14 @@ class CommentsController < ApplicationController
       redirect_to posts_path, alert: @comment.errors.full_messages.join('. ').to_s
     end
   end
+
   def destroy
     @comment = Post.find(params[:post_id]).comments.find(params[:id])
     @comment.destroy
     redirect_to posts_path
-    flash[:error] = "Comment was destroyed!"
+    flash[:error] = 'Comment was destroyed!'
   end
+
   private
 
   def comment_params
