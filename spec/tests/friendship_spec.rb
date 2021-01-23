@@ -14,7 +14,7 @@ describe 'Friendship', type: :feature do
     visit '/users'
     click_on('ADD')
     click_on('Sign out')
-    fill_in 'user_email',	with: 'Ali@yahoo.com'
+    fill_in 'user_email', with: 'Ali@yahoo.com'
     fill_in 'user_password', with: '123456'
     find("input[type='submit']").click
     visit '/users'
