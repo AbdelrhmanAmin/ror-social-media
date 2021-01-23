@@ -11,9 +11,11 @@ module FriendshipHelper
       html = ''
       html << "<div>
       #{link_to('Accept',
-      accept_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first), method: :post, class: 'btn btn-success')}
+      accept_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first), 
+                                                        method: :post, class: 'btn btn-success')}
       #{link_to('Reject',
-      reject_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first), method: :post, class: 'btn btn-danger')}
+      reject_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first), 
+                                                          method: :post, class: 'btn btn-danger')}
       </div>"
       html.html_safe
       # not friends
