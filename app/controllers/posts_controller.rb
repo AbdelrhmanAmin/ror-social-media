@@ -17,7 +17,12 @@ class PostsController < ApplicationController
       render :index, alert: 'Post was not created.'
     end
   end
-
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+    flash[:error] = "Post was destroyed!"
+  end
   private
 
   def timeline_posts
