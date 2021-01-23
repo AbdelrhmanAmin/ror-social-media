@@ -15,4 +15,20 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+  def navbar
+    out = ''
+    if user_signed_in?
+      out << "
+        <span>
+        #{link_to current_user.name, user_path(current_user), class: 'mx-4 text-warning'}
+        </span>
+        <span>
+        #{link_to 'Sign out', destroy_user_session_path, method: :delete , class: 'text-danger'}
+        </span>
+      "
+    else
+      out << "#{link_to 'Sign in', user_session_path}"
+    end
+    out.html_safe
+  end
 end
