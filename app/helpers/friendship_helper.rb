@@ -1,3 +1,5 @@
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/PerceivedComplexity
 module FriendshipHelper
   def friendship_button(the_other_user)
     # already friends
@@ -25,3 +27,5 @@ module FriendshipHelper
     end
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/PerceivedComplexity
