@@ -1,6 +1,7 @@
 # rubocop:disable Layout/LineLength
 # rubocop:disable Metrics/PerceivedComplexity
 # rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Layout/ArgumentAlignment
 module FriendshipHelper
   def friendship_button(the_other_user)
     # already friends
@@ -25,3 +26,4 @@ end
 # rubocop:enable Layout/LineLength
 # rubocop:enable Metrics/PerceivedComplexity
 # rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Layout/ArgumentAlignment
