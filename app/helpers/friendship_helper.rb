@@ -19,9 +19,10 @@ module FriendshipHelper
       </div>"
       html.html_safe
       # not friends
-    elsif !current_user.friend?(the_other_user) && current_user != the_other_user &&
-        !current_user.friend_requests.include?(the_other_user) &&
-        !current_user.pending_friends.include?(the_other_user)
+    elsif !current_user.friend?(the_other_user) &&
+          current_user != the_other_user &&
+          !current_user.friend_requests.include?(the_other_user) &&
+          !current_user.pending_friends.include?(the_other_user)
       render 'friendship/form', user: the_other_user
     end
   end
