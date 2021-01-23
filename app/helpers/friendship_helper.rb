@@ -1,7 +1,5 @@
-# rubocop:disable Layout/LineLength
 # rubocop:disable Metrics/PerceivedComplexity
 # rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Layout/ArgumentAlignment
 module FriendshipHelper
   def friendship_button(the_other_user)
     # already friends
@@ -12,9 +10,11 @@ module FriendshipHelper
       html = ''
       html << "<div>
       #{link_to('Accept',
-      accept_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first), method: :post, class: 'btn btn-success')}
+      accept_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first),
+      method: :post, class: 'btn btn-success')}
       #{link_to('Reject',
-      reject_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first), method: :post, class: 'btn btn-danger')}
+      reject_friendship_path(Friendship.where(user: the_other_user, friend: current_user).first),
+      method: :post, class: 'btn btn-danger')}
       </div>"
       html.html_safe
       # not friends
@@ -23,7 +23,5 @@ module FriendshipHelper
     end
   end
 end
-# rubocop:enable Layout/LineLength
 # rubocop:enable Metrics/PerceivedComplexity
 # rubocop:enable Metrics/CyclomaticComplexity
-# rubocop:enable Layout/ArgumentAlignment

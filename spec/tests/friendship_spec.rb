@@ -1,4 +1,3 @@
-# rubocop:disable Layout/Tab:
 require 'rails_helper'
 
 describe 'Friendship', type: :feature do
@@ -50,4 +49,3 @@ describe 'Friendship', type: :feature do
     expect(page).to_not have_text('Accept')
   end
 end
-# rubocop:enable Layout/Tab:
