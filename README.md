@@ -1,6 +1,11 @@
 # Social Media App
 
-In this project we built an Social Media application. You can sign up with and email and password and then create posts, add other user as friends, read the post of your friends, coment and give them a like.
+In this project I've built a Social Media application.
+Where you can create a user and with that you can:
+
+- Add a friend, Accept/Reject friend request, Unfriend.
+- You can create posts, Add likes and comments.
+- You can delete posts, Likes and comments.
 
 ## Screenshots
 

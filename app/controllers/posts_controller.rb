@@ -18,6 +18,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+    flash[:error] = 'Post was destroyed!'
+  end
+
   private
 
   def timeline_posts

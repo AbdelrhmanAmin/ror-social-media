@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   it 'is valid if all the fields are provided' do
-    user = User.create(name: 'Abdo', email: 'Abdo@yahoo.com', password: '123456')
+    user = User.create(name: 'Abdo', email: 'Abdo34@yahoo.com', password: '123456')
     expect(Post.create(content: 'Post description', user_id: user.id)).to be_valid
   end
 
