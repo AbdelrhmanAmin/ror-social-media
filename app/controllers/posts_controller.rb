@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-
   def index
+    @users = User.all
+    @posts = Post.all
     @post = Post.new
     timeline_posts
   end
@@ -15,6 +16,13 @@ class PostsController < ApplicationController
       timeline_posts
       render :index, alert: 'Post was not created.'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+    flash[:error] = 'Post was destroyed!'
   end
 
   private

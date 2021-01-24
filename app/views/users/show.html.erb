@@ -1,9 +1,21 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
-  <article class="timeline">
-    <h3>Recent posts:</h3>
-    <ul class="posts">
-      <%= render @posts %>
-    </ul>
-  </article>
+  <div class="d-flex justify-content-between w-100 align-items-center">
+    <h2><%= @user.name %></h2>
+    <%= friendship_button(@user)%>
+  </div>
 </section>
+  <hr class='hr py-3 w-100'>
+  <div class='d-flex justify-content-around w-100'>
+      <div>
+        <h3>Friends:</h3>
+        <ul>
+          <%= display_friends(@user) %>
+        </ul>
+      </div>
+      <article class="timeline">
+        <h3>Recent posts:</h3>
+        <ul class="posts">
+          <%= render @posts %>
+        </ul>
+      </article>
+  </div>
