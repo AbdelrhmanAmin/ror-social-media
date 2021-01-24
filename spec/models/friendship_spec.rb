@@ -22,10 +22,27 @@ RSpec.describe 'Friendship', type: :model do
     e = User.create!(email: 'test1@gmail.com', name: 'moon', password: '123456')
     g = User.create!(email: 'test2@gmail.com', name: 'sun', password: '234567')
     Friendship.create!(user_id: e.id, friend_id: g.id)
+    Friendship.where(user: e, friend: g).first.destroy
+    expect(Friendship.where(user: e, friend: g).first).to_not eql(Friendship.create!(user_id: e.id, friend_id: g.id))
+  end
+end
+RSpec.describe 'Friendship', type: :model do
+  it 'will check for deleting the friendship' do
+    e = User.create!(email: 'test1@gmail.com', name: 'moon', password: '123456')
+    g = User.create!(email: 'test2@gmail.com', name: 'sun', password: '234567')
+    Friendship.create!(user_id: e.id, friend_id: g.id)
     expect(Friendship.where(user: e, friend: g).first.destroy).to be_valid
   end
 end
 
+RSpec.describe 'Friendship', type: :model do
+  it 'will check for accepting the friendship' do
+    s = User.create!(email: 'test1@gmail.com', name: 'moon', password: '123456')
+    r = User.create!(email: 'test2@gmail.com', name: 'sun', password: '234567')
+    Friendship.create!(user_id: s.id, friend_id: r.id)
+    expect(Friendship.where(user: s, friend: r).first.confirmed).to_not be(true)
+  end
+end
 RSpec.describe 'Friendship', type: :model do
   it 'will check for accepting the friendship' do
     s = User.create!(email: 'test1@gmail.com', name: 'moon', password: '123456')

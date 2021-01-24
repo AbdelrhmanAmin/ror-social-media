@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'validation' do
-    u = User.new(email: 'Abdo@yahoo.com', name: 'Abdo', password: '123456')
+    user = User.create(name: 'Abdo', email: 'Abdo34@yahoo.com', password: '123456')
     it 'should have a user' do
-      u.name = nil
+      user.name = nil
       expect(User.new).to_not be_valid
     end
 
