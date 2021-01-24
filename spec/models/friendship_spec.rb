@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe 'Friendship', type: :model do
@@ -6,7 +5,7 @@ RSpec.describe 'Friendship', type: :model do
     d = User.create(email: 'test1@gmail.com', name: 'moon', password: '123456')
     b = User.create(email: 'test2@gmail.com', name: 'sun', password: '234567')
     Friendship.create(user: d, friend: b)
-    expect(Friendship.where(user:d,friend: b).first).to be_valid
+    expect(Friendship.where(user: d, friend: b).first).to be_valid
   end
 end
 
@@ -23,7 +22,7 @@ RSpec.describe 'Friendship', type: :model do
     e = User.create!(email: 'test1@gmail.com', name: 'moon', password: '123456')
     g = User.create!(email: 'test2@gmail.com', name: 'sun', password: '234567')
     Friendship.create!(user_id: e.id, friend_id: g.id)
-    expect(Friendship.where(user:e, friend:g).first.destroy).to be_valid
+    expect(Friendship.where(user: e, friend: g).first.destroy).to be_valid
   end
 end
 
@@ -32,7 +31,7 @@ RSpec.describe 'Friendship', type: :model do
     s = User.create!(email: 'test1@gmail.com', name: 'moon', password: '123456')
     r = User.create!(email: 'test2@gmail.com', name: 'sun', password: '234567')
     Friendship.create!(user_id: s.id, friend_id: r.id)
-    Friendship.where(user:s, friend:r).update(confirmed: true)
-    expect(Friendship.where(user:s, friend:r).first.confirmed).to be(true)
+    Friendship.where(user: s, friend: r).update(confirmed: true)
+    expect(Friendship.where(user: s, friend: r).first.confirmed).to be(true)
   end
 end

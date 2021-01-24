@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
       u.name = nil
       expect(User.new).to_not be_valid
     end
-    
+
     it 'should have a valid user' do
       expect(User.new(name: 'Abdo', email: 'Abdo@yahoo.com', password: '123456')).to be_valid
     end
