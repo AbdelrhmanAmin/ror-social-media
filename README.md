@@ -22,7 +22,7 @@ Where you can create a user and with that you can:
 
 ## Live Demo
 
-TBA
+[Click me](https://afternoon-plains-52830.herokuapp.com/)
 
 ## Getting Started
 
@@ -67,7 +67,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+[Click me](https://afternoon-plains-52830.herokuapp.com/)
 
 ## Authors
 
