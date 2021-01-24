@@ -98,6 +98,11 @@ a {
   color: red;
 }
 
+.hr {
+  background-color: rgb(0, 0, 0);
+  color: black;
+}
+
 .new_post,
 .new_comment {
   display: flex;
@@ -157,7 +162,7 @@ form {
     }
 
     input[type="checkbox"] {
-      width: fit-content;
+      width: 100%;
     }
   }
 
@@ -168,18 +173,13 @@ form {
   }
 
   input[type="submit"] {
-    padding: 8px;
-    width: 50%;
     border: none;
     border-radius: 4px;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
     text-transform: uppercase;
     font-weight: 900;
   }
 
   input[type="submit"]:hover {
-    background-color: $primary-color;
     color: #fff;
   }
 
@@ -286,7 +286,6 @@ form {
   }
 
   .profile-link {
-    font-size: 0.8em;
     margin: 0 0 8px 0;
     color: $primary-color-dark;
   }

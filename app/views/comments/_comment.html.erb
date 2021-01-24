@@ -1,6 +1,6 @@
 <div class="post-comments">
-  <p>
-    <b><%= comment.user.name %>:</b> <%= comment.content %>
-  </p>
-  <span> <%= comment.created_at.strftime("%Y/%m/%d") %> </span>
+  <div class='d-flex justify-content-between align-items-center w-100'>
+    <div><b><%= comment.user.name %>:</b> <%= comment.content %></div>
+    <%= del_btn(comment.user, comment)%>
+  </div>
 </div>
